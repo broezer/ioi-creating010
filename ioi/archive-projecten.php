@@ -39,7 +39,7 @@
 		<?php endif;  ?>
 	</div>
 	<div class="row">
-	<ol>
+	<ol class="list_projecten">
 		<?php 	
 			  
 				$projecten = array( 'post_type' => 'projecten', 'showposts' => "10", 'paged' => get_query_var( 'paged' ), 'orderby' => 'date', 'order'=> 'DESC', 'caller_get_posts' =>1);
@@ -47,7 +47,7 @@
 			 ?>
 	<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 		<li>
-			<article class="twelvecol">
+			<article class="twelvecol projecten">
 				<div class="article_thumb threecol">
 					<?php 
 					if ( has_post_thumbnail() ) {
@@ -55,33 +55,37 @@
 					} 
 					else {
 					?>
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/defaultImg.png">
+					
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/defaultImg02.png">
+					
 					<?php
 					}
 					?>
 				</div>
-				<h3><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-				<p class="excerpt">
+				<h3 class="title_projecten"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+				<p class="excerpt projecten_excerpt">
 					<?php
 					  // Use function for custom excerpts 	
 					  $excerpt = get_the_excerpt();
 					  // Limit the words 
-					  echo string_limit_words($excerpt,25);
+					  echo string_limit_words($excerpt,35);
 					?> ... 
 					
 					</p>
 			</article>
 		</li>
 	<?php endwhile; ?>
-	<div class="navigation">
-				<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
-				<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
-			</div>
+	</div>
+	<div class="navigation row">
+				<div class="alignleft sixcol last"><?php previous_posts_link(' &laquo; Newer Entries ') ?></div>
+				<div class="alignright sixcol"><?php next_posts_link('Older Entries &raquo;') ?></div>
+				
+	</div>
 	</ol>
 	<?php else: ?>
 	<h2>No posts to display</h2>	
 	<?php endif; ?>
-	</div>
+	
 </div>
 
 

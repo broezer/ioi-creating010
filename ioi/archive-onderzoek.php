@@ -54,9 +54,9 @@
 		</li>
 	<?php endwhile; ?>
 	<div class="navigation">
-				<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
-				<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
-			</div>
+				<div class="alignleft sixcol last"><?php previous_posts_link(' &laquo; Newer Entries ') ?></div>
+				<div class="alignright sixcol"><?php next_posts_link('Older Entries &raquo;') ?></div>
+	</div>
 	</ol>
 	<?php else: ?>
 	<h2>No posts to display</h2>	

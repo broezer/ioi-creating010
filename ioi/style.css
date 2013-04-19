@@ -44,6 +44,11 @@ header 				{background: #FFF}
 .show				{display:block}
 .hide 				{display:none}
 
+a 					{color:#00b8f8 !important}
+
+.alignleft			{text-align:left}
+.alignright			{text-align:right}
+
 
 
 /* ---------------------------------------------------------------------------------------------------------- 
@@ -113,8 +118,8 @@ header				{height:125px;}
 #main li 				{float:left; color:#FFF; font-weight:bold; text-transform:uppercase; margin-right:8px; font-size:15px; position:relative}
 
 #main li  a  			{text-decoration:none; padding: 10px 10px 10px 21px; background:url('images/mainMenu_span_sprite_left.png') no-repeat 10px -400px; float:left}
-#main li  a:link, #main li a:visited {color:#fff;}
-#main li  a:hover 		{color:#000;}
+#main li  a:link, #main li a:visited {color:#fff !important;}
+#main li  a:hover 		{color:#000 !important;}
 #main li.active a 		{background-position:10px 10px; color:#fff}
 #main li.lihover a	    {background-position:10px -88px; color:#000 }
 #main li.sfHover a	 	{background-position:10px -37px; color:#000 }
@@ -162,6 +167,9 @@ header				{height:125px;}
 .workers { padding: 15px 0 5px 0 }
 
 
+.more_news {width:100%; border-bottom:none}
+a.more_news_link {padding:20px 0 0 0}
+
 /*HOME - SIDEBAR */
 ul.onderzoekslijn li {list-style-image:url('images/arrow_bullet.png'); font-size:17px; line-height:36px}
 ul.onderzoekslijn li a:link {color:#616964 }
@@ -178,6 +186,15 @@ time {font-size:11px; color: #949996;  }
 .meta {border-bottom:1px solid #e1e1e1; padding:10px 0; margin:0 0 20px 0; width:100% }
 p{font-size:15px; color:#616964; margin-bottom:15px; line-height:27px}
 .content {margin-top:30px}
+
+
+/*Projecten - Archive*/
+ol.list_projecten {margin:0}
+article.projecten {border-bottom: 1px solid #e1e1e1; margin: 30px 0 0 0 }
+h3.title_projecten {font-size:18px; margin:0; line-height: 27px;}
+p.projecten_excerpt {font-size:14px; line-height:27px}
+.navigation{margin:40px auto 70px}
+
 
 
 /*Projecten - Single*/

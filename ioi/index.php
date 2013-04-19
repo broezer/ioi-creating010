@@ -47,7 +47,8 @@
 			<?php else : ?>
 			<h2 class="headings">News</h2>
 			<?php endif;  ?>
-		<?php $nieuwspost = array( 'post_type' => 'nieuws', );
+			
+		<?php $nieuwspost = array( 'post_type' => 'nieuws', 'showposts' => 5, 'paged' => get_query_var('paged'), 'orderby' => 'date', 'order'=> 'DESC', 'caller_get_posts' =>1);
 			      $loop = new WP_Query( $nieuwspost ); ?>
 		<?php while ( $loop->have_posts() ) : $loop->the_post();?>
 	
@@ -126,9 +127,17 @@
 					
 					
 				</div>
-			
+				
 		<?php endwhile; ?>
+		
+			
+						
+			<div class=" news_post navigation alignright more_news">
+
+				<a href="/nieuws" class=" " title="Nieuws">Meer nieuws &raquo;</a>
+			</div>
 		</div>
+		
 		<?php else: ?>
 		<h2 class="sevencol">No posts to display</h2>
 		<?php endif; ?>
@@ -223,7 +232,8 @@
 		
 
 			<?php endwhile; ?>
-
+			
+			
 			<?php else: ?>
 			<h2 class="twelve">No Workers to display</h2>
 			<?php endif; ?>
