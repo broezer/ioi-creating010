@@ -29,7 +29,10 @@
 			<div class="news sevencol">
 
 				<h2><?php the_title(); ?></h2>
-				<?php the_post_thumbnail('featuredImageCroppedContent'); ?>
+				<?php the_post_thumbnail('featuredImageCroppedContent');
+				echo '<span class="image_caption">'; 
+				echo get_post(get_post_thumbnail_id())->post_excerpt;
+				echo '</span>' ?>
 				<div class="meta">
 					<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date('d F Y'); ?></time> 
 				</div>
@@ -45,36 +48,41 @@
 
 			</div>
 	<?php endwhile; ?>
+	
+			<div class="onecol"></div>
+			<div class="fourcol last">
+				<?php
+				// Find connected pages
+				$connected = new WP_Query( array(
+				  'connected_type' => 'nieuws_to_medewerkers',
+				  'connected_items' => get_queried_object(),
+				  'nopaging' => true,
+				) );
+
+				// Display connected pages
+				if ( $connected->have_posts() ) :
+
+				?>
+				<h3>Gerelateerde Medewerkers:</h3>
+				<ul>
+				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+				<?php endwhile; ?>
+				</ul>
+
+				<?php 
+				// Prevent weirdness
+				wp_reset_postdata();
+
+				endif;
+
+				?>
+			</div>
 		</div>
 	</div>
 
 <div class="row">
-	<?php
-	// Find connected pages
-	$connected = new WP_Query( array(
-	  'connected_type' => 'nieuws_to_medewerkers',
-	  'connected_items' => get_queried_object(),
-	  'nopaging' => true,
-	) );
-
-	// Display connected pages
-	if ( $connected->have_posts() ) :
 	
-	?>
-	<h3>Related Agenda:</h3>
-	<ul>
-	<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-		<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-	<?php endwhile; ?>
-	</ul>
-
-	<?php 
-	// Prevent weirdness
-	wp_reset_postdata();
-
-	endif;
-
-	?>
 </div>
 
 

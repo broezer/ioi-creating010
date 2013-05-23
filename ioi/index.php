@@ -88,8 +88,8 @@
 							
 							</div>
 					
-							<div class="article_title fourcol last">
-								<h2><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark" class="title_link"><?php the_title(); ?></a></h2>
+							<div class="article_title  last">
+								<h2 class=""><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark" class="title_link"><?php the_title(); ?></a></h2>
 								<p class="excerpt">
 									<?php
 									  // Use function for custom excerpts 	

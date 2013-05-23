@@ -385,6 +385,10 @@
 	}
 	add_action( 'p2p_init', 'my_connection_types' );
 	
+	
+	
+	
+	
 	/* CUSTOM MENUS */	
 
 	register_nav_menus( array(
@@ -412,6 +416,7 @@
 	add_image_size('featuredImageCropped', 394, 252, true);
 	add_image_size('featuredImageCroppedContent', 1292, 576, true);
 	add_image_size('featuredImageProfile', 150, 150, true);
+	add_image_size('featuredImageProfileSmall', 125, 125, true);
 	add_image_size('projectBig', 2280, 652, true);
 	add_image_size('projectNormal', 1140, 326, true);
 	add_image_size('projectThumbBig', 308, 216, true);

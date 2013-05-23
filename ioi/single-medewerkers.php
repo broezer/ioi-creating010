@@ -134,10 +134,14 @@
 			
 			<?php
 			// Find connected pages
+			
+			
 			$connected = new WP_Query( array(
 			  'connected_type' => 'publicaties_to_medewerkers',
 			  'connected_items' => get_queried_object(),
-			  'nopaging' => true,
+			  'nopaging' => true
+			  
+			  
 			) );
 
 			// Display connected pages
@@ -151,14 +155,15 @@
 			<?php endif;  ?>
 			<ul class="related_projects">
 			<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-				<li>
+				<li class="single-publication-title">
 				    
 				        <?php the_title() ?>
 				   	
 				</li>
 			<?php endwhile; ?>
 			</ul>
-
+			
+			
 			<?php 
 			// Prevent weirdness
 			wp_reset_postdata();

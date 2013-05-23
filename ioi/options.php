@@ -74,6 +74,44 @@ function optionsframework_options() {
 		'id' => 'about_en',
 		'type' => 'editor',
 		'settings' => $wp_editor_settings );
+		
+	$options[] = array(
+		'name' => __('Publicaties', 'options_framework_theme'),
+		'type' => 'heading' );
+
+	/**
+	 * For $settings options see:
+	 * http://codex.wordpress.org/Function_Reference/wp_editor
+	 *
+	 * 'media_buttons' are not supported as there is no post to attach items to
+	 * 'textarea_name' is set by the 'id' you choose
+	 */
+
+	$wp_editor_settings = array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5,
+		'tinymce' => array( 'plugins' => 'wordpress' )
+	);
+
+	$options[] = array(
+		'name' => __('Publicaties (Nederlands)', 'options_framework_theme'),
+		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_framework_theme' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
+		'id' => 'pub_nl',
+		'type' => 'editor',
+		'settings' => $wp_editor_settings );
+
+	$wp_editor_settings = array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5,
+		'tinymce' => array( 'plugins' => 'wordpress' )
+	);
+
+	$options[] = array(
+		'name' => __('Publications (English)', 'options_framework_theme'),
+		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_framework_theme' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
+		'id' => 'pub_en',
+		'type' => 'editor',
+		'settings' => $wp_editor_settings );
 
 	return $options;
 }

@@ -49,7 +49,7 @@ a 					{color:#00b8f8 !important}
 .alignleft			{text-align:left}
 .alignright			{text-align:right}
 
-
+.select-menu 		{width:100%}
 
 /* ---------------------------------------------------------------------------------------------------------- 
 02 Typography -----------------------------------------------------------------------------------------------
@@ -128,8 +128,7 @@ header				{height:125px;}
 #main li.lihover span 	{background-position:right -90px; }
 #main li.sfHover span	{background-position:right -39px; }
 
-
-
+#flaggenmast			{display:none;}
 
 #main li ul			{position:absolute; z-index:99; min-height:70px; background:#fff; width:140px; padding:16px 16px;  font-family:Arial; top:35px; left:-40px; border-bottom:#09f 5px solid; border-radius:5px}
 #main li > ul > li	{font-family:'arial'; font-weight:normal; text-transform:none; font-size:13px }
@@ -177,15 +176,19 @@ ul.onderzoekslijn li a:link {color:#616964 }
 
 .worker{margin:0 0 32px 0}
 .worker img {max-height:55px}
+.attachment-featuredImageProfile {width:125px; height:125px} /*dirty hack 22-04-2013 has to be solved trough new thumbnail funtion */
+
 /*Single - Defaults*/
 .single > .nav-wrap {margin-bottom:30px !important;}
 .single > .footer-wrap {margin-top:30px !important;}
 /*SINGLE - NEWS */
 .single h2 {font-size:24px; border-bottom: 3px solid #0099ff; margin:0 0 20px 0}
+.image_caption {font-size:11px; color: #949996;  }
 time {font-size:11px; color: #949996;  }
 .meta {border-bottom:1px solid #e1e1e1; padding:10px 0; margin:0 0 20px 0; width:100% }
 p{font-size:15px; color:#616964; margin-bottom:15px; line-height:27px}
 .content {margin-top:30px}
+li.single-publication-title {font-size:9px; border-bottom:1px solid #eee }
 
 
 /*Projecten - Archive*/
@@ -196,13 +199,16 @@ p.projecten_excerpt {font-size:14px; line-height:27px}
 .navigation{margin:40px auto 70px}
 
 
-
 /*Projecten - Single*/
 
 .single h3 {font-size:24px; border-bottom: 3px solid #0099ff; margin:0 0 20px 0}
 ul.related_workers {margin:0 0 0 2px; padding:0;}
 ul.related_workers li {height:60px; margin:8px 0; color:#000; font-weight:bold}
 ul.related_workers img {max-height:60px; max-width:60px; margin-right:12px}
+
+/*Presentaties - Single*/
+.single iframe {width:100%; min-height:500px}
+
 
 /*FOOTER*/
 .footer-wrap{background:#faf9f9; padding:10px 20px; color:#616964; line-height:27px}
@@ -251,10 +257,16 @@ ul.related_workers img {max-height:60px; max-width:60px; margin-right:12px}
 	.workers				{display:none}
 	
 	
-	#main-menu 				{display:block !important}
+	#main-menu 				{display:block !important; margin:10px 0 0 0}
 	#main 					{display:none !important}
-	.select-menu            {display:block}	
+	.select-menu            {display:block; }	
 	
+	#flaggenmast			{float: right; margin:1px 0 0 2px; display:none}
+	
+	.footer-wrap			{padding:10px 0;}
+	
+	
+	.single iframe 			{width:100%; min-height:250px}
 }
 
 

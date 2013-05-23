@@ -23,7 +23,7 @@
 	<?php if (qtrans_getLanguage() == 'nl' ): ?>
 		
 		    <div class="twelvecol">
-				<h2 class="headings">Projecten</h2>
+				<h2 class="headings">Nieuws</h2>
 				
 			</div>
 			
@@ -32,7 +32,7 @@
 		<?php else : ?>
 			
 			 <div class="sevencol">
-				<h2 class="headings">Projects</h2>
+				<h2 class="headings">News</h2>
 				
 			</div>
 
@@ -42,8 +42,8 @@
 	<ol class="list_projecten">
 		<?php 	
 			  
-				$projecten = array( 'post_type' => 'projecten', 'showposts' => "10", 'paged' => get_query_var( 'paged' ), 'orderby' => 'date', 'order'=> 'DESC', 'caller_get_posts' =>1);
-			    $loop = new WP_Query( $projecten );
+				$nieuws = array( 'post_type' => 'nieuws', 'showposts' => "10", 'paged' => get_query_var( 'paged' ), 'orderby' => 'date', 'order'=> 'DESC', 'caller_get_posts' =>1);
+			    $loop = new WP_Query( $nieuws );
 			 ?>
 	<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 		<li>

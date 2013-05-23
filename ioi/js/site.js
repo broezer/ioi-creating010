@@ -80,6 +80,11 @@
 		    subMenuDash: '&ndash;'
 		});
 		
+	/*publications */
+	$(".collapse").collapse();
+	
+	
+		
 	/* News Items*/
 		$(".show_hide").click(function(e){
 		    

@@ -22,8 +22,8 @@
 	<div class="row">
 	<?php if (qtrans_getLanguage() == 'nl' ): ?>
 		
-		    <div class="sevencol">
-				<h4>Onderzoekslijnen</h4>
+		    <div class="twelvecol">
+				<h2 class="headings">Presentaties</h2>
 				
 			</div>
 			
@@ -32,36 +32,41 @@
 		<?php else : ?>
 			
 			 <div class="sevencol">
-				<h4>Research Fields</h4>
+				<h2 class="headings">Presentations</h2>
 				
 			</div>
 
 		<?php endif;  ?>
 	</div>
 	<div class="row">
-	<ol>
+		<div class="fourcol">
+		</div>
+		<ol class="list_projecten eightcol">
 		<?php 	
-			  	$i = 0;
-				$onderzoek = array( 'post_type' => 'onderzoek', 'showposts' => "20", "paged", 'orderby' => 'title', 'order'=> 'ASC');
-			    $loop = new WP_Query( $onderzoek );
+			  
+				$projecten = array( 'post_type' => 'presentaties', 'showposts' => "10", 'paged' => get_query_var( 'paged' ), 'orderby' => 'date', 'order'=> 'DESC', 'caller_get_posts' =>1);
+			    $loop = new WP_Query( $projecten );
 			 ?>
 	<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 		<li>
-			<article>
-				<h2><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			
+			<article class=" projecten">
+				
+				<h3 class="title_projecten"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+				
 			</article>
 		</li>
 	<?php endwhile; ?>
-	<div class="navigation">
+	</div>
+	<div class="navigation row">
 				<div class="alignleft sixcol last"><?php previous_posts_link(' &laquo; Newer Entries ') ?></div>
 				<div class="alignright sixcol"><?php next_posts_link('Older Entries &raquo;') ?></div>
+				
 	</div>
 	</ol>
 	<?php else: ?>
 	<h2>No posts to display</h2>	
 	<?php endif; ?>
-	</div>
+	
 </div>
 
 
