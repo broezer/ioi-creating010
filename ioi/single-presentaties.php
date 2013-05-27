@@ -29,7 +29,7 @@
 			<?php
 			// Find connected pages
 			$connected = new WP_Query( array(
-			  'connected_type' => 'projecten_to_medewerkers',
+			  'connected_type' => 'presentaties_to_medewerkers',
 			  'connected_items' => get_queried_object(),
 			  'nopaging' => true,
 			) );
@@ -39,9 +39,9 @@
 
 			?>
 			<?php if (qtrans_getLanguage() == 'nl' ): ?>
-			<h3>Gerelateerde projecten</h3>
+			<h3>Gerelateerde medewerkers</h3>
 			<?php else : ?>
-			<h3>Related Projects</h3>
+			<h3>Related workers</h3>
 			<?php endif;  ?>
 			<ul class="related_projects">
 			<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
@@ -64,7 +64,7 @@
 			<?php
 			// Find connected pages
 			$connected = new WP_Query( array(
-			  'connected_type' => 'medewerkers_to_onderzoek',
+			  'connected_type' => 'presentaties_to_onderzoek',
 			  'connected_items' => get_queried_object(),
 			  'nopaging' => true,
 			) );
@@ -100,7 +100,7 @@
 			<?php
 			// Find connected pages
 			$connected = new WP_Query( array(
-			  'connected_type' => 'nieuws_to_medewerkers',
+			  'connected_type' => 'nieuws_to_presentaties',
 			  'connected_items' => get_queried_object(),
 			  'nopaging' => true,
 			) );
@@ -136,7 +136,7 @@
 			<?php
 			// Find connected pages
 			$connected = new WP_Query( array(
-			  'connected_type' => 'presentaties_to_medewerkers',
+			  'connected_type' => 'projecten_to_presentaties',
 			  'connected_items' => get_queried_object(),
 			  'nopaging' => true,
 			) );
@@ -148,9 +148,9 @@
 		
 			
 			<?php if (qtrans_getLanguage() == 'nl' ): ?>
-			<h3>Gerelateerde presentaties</h3>
+			<h3>Gerelateerde projectn</h3>
 			<?php else : ?>
-			<h3>Related presentations</h3>
+			<h3>Related projects</h3>
 			<?php endif;  ?>
 			<ul class="related_projects">
 			<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
@@ -175,7 +175,7 @@
 			<?php
 			// Find connected pages
 			$connected = new WP_Query( array(
-			  'connected_type' => 'publicaties_to_medewerkers',
+			  'connected_type' => 'publicaties_to_presentaties',
 			  'connected_items' => get_queried_object(),
 			  'nopaging' => true,
 			) );
